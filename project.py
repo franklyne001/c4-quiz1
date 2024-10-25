@@ -54,12 +54,20 @@ movies_2016_count = movies_2016.shape[0]
 
 # Print the result
 print(f"The number of movies released in 2016 is {movies_2016_count}")
+
 #Highest rated movie
 highest_rated_movie = movies_df.loc[movies_df['Rating'].idxmax()]
 highest_rated_movie[['Title', 'Rating']]
 
 #print the result
 print(f"Highest Rated Movie: {highest_rated_movie['Title']}, Rating: {highest_rated_movie['Rating']}")
+
+#The number of movies with  a rating of at least 8.0
+highest_rated_movie = movies_df[movies_df['Rating'] >= 8.0].shape[0]
+
+print(f"The number of movies with  a rating of at least 8.0 is: {highest_rated_movie}")
+
+
 
 
 # Filter the dataset for movies directed by Christopher Nolan
@@ -125,6 +133,8 @@ average_ratings_per_year = df.groupby('Year')['Rating'].mean()
 highest_avg_rating_year = average_ratings_per_year.idxmax()
 
 print(f"The year with the highest average rating is: {highest_avg_rating_year}")
+
+#the number of movies with the rating of at least 8.0
 
 
 # Loading the dataset
