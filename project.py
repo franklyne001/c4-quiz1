@@ -189,7 +189,39 @@ unique_genre_count = len(unique_genres)
 print(f"The number of unique genres is: {unique_genre_count}")
 
 #correllation features
+import pandas as pd
+import matplotlib.pyplot as plt
 
+# Load the data from the CSV file
+# Loading the dataset
+file_path = 'movie_dataset.csv'  # Update the file path as necessary
+df = pd.read_csv(file_path)
+
+# Create a scatter plot of Correlation between rating and Revenue (Millions)
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Rating'], df['Revenue (Millions)'], color='blue', marker='o')
+
+# Add titles and labels
+plt.title('Correlation between rating and Revenue (Millions)')
+plt.xlabel('Rating')
+plt.ylabel('Revenue (Millions)')
+
+# Show the plot
+plt.grid()
+plt.show()
+
+# Create a scatter plot of Correlation between rating and runtime
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Rating'], df['Runtime (Minutes)'], color='blue', marker='o')
+
+# Add titles and labels
+plt.title('Correlation between rating and Runtime (Minutes)')
+plt.xlabel('Rating')
+plt.ylabel('Runtime (Minutes)')
+
+# Show the plot
+plt.grid()
+plt.show()
 
 # Loading the dataset
 file_path = 'movie_dataset.csv'  # Update the file path as necessary
